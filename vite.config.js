@@ -4,9 +4,10 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
   plugins: [svelte()],
   root: '.',  // the root directory for the server
-  base: '/spaced-repetition-memorization/',  // the base URL the server will run on
+  base: '/',  // the base URL the server will run on
   build: {
     outDir: 'dist',  // the output directory for the build
+    assetsInclude: ['**/manifest.json']
   },
   server: {
     host: '192.168.0.56',

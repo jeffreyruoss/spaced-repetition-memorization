@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Spaced Repetition Memorization</title>
+    <link rel="manifest" href="manifest.json">
     <!-- pico css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <!-- custom css -->
@@ -10,6 +11,34 @@
     <!-- <link rel="icon" href="favicon.webp" type="image/x-icon" /> -->
   </head>
   <body>
+    <div class="container">
+      <button id="pwa-install-button">Install App</button>
+    </div>
     <script src="app.js" type="module"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    
+      let deferredPrompt;
+    
+      window.addEventListener('beforeinstallprompt', e => {
+        deferredPrompt = e;
+    
+        const button = document.getElementById('pwa-install-button');
+          button.addEventListener('click', async () => {
+            if(deferredPrompt !== null) {
+              deferredPrompt.prompt();
+              
+              const {outcome} = await deferredPrompt.userChoice;
+              if(outcome === 'dismissed') {
+                deferredPrompt = null;
+              }
+            }
+          });
+      });
+      </script>
   </body>
 </html>
