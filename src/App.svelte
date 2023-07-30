@@ -4,8 +4,9 @@ import { onMount } from 'svelte';
 
 onMount(async () => {
   if ('serviceWorker' in navigator) {
+    const swURL = import.meta.env.MODE === 'development' ? '/sw.dev.js' : '/sw.js';
     try {
-      const registration = await navigator.serviceWorker.register('/sw.js');
+      const registration = await navigator.serviceWorker.register(swURL);
       console.log('Service Worker Registered:', registration);
     } catch (registrationError) {
       console.log('Service Worker Registration Failed:', registrationError);
