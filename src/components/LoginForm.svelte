@@ -9,7 +9,6 @@
 		loginUser(email, password)
 			.then(userCredential => {
 				toast.push(`You are logged in as ${email}`);
-				document.getElementById('auth').style.display = 'none';
 			})
 			.catch(error => alert(error.message));
 	}

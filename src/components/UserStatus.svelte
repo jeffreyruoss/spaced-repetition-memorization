@@ -1,17 +1,17 @@
 <script>
 	import { onAuthStateChanged, logoutUser } from './../authFunctions.js';
 	import { toast } from '@zerodevx/svelte-toast';
+	import { isLoggedIn } from './../stores/authStore.js';
 
 	let userStatus = "No user is signed in";
-	let isLoggedIn = false;
 
 	onAuthStateChanged(user => {
 		if (user) {
-			userStatus = `${user.email} is signed in`;
-			isLoggedIn = true;
+			userStatus = `Signed in as ${user.email}`;
+			isLoggedIn.set(true);
 		} else {
 			userStatus = `No user is signed in`;
-			isLoggedIn = false;
+			isLoggedIn.set(false);
 		}
 	});
 
@@ -24,7 +24,7 @@
 
 <p>
 	{userStatus}
-	{#if isLoggedIn}
+	{#if $isLoggedIn}
 		 | <a href="#" on:click|preventDefault={logout}>Logout</a>
 	{/if}
 </p>

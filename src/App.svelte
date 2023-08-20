@@ -6,6 +6,8 @@
   import UserStatus from './components/UserStatus.svelte';
   import { SvelteToast } from '@zerodevx/svelte-toast';
   import './global.css';
+  import CreateCard from './components/CreateCard.svelte';
+  import { isLoggedIn } from './stores/authStore.js';
 
   onMount(async () => {
     if ('serviceWorker' in navigator) {
@@ -32,12 +34,17 @@
 </header>
 
 <main>
-  <div class="container">
-    <div id="auth">
-      <RegisterForm />
-      <LoginForm />
+  {#if !$isLoggedIn}
+    <div class="container">
+      <div id="auth">
+        <RegisterForm />
+        <LoginForm />
+      </div>
     </div>
-  </div>
+  {/if}
+  {#if $isLoggedIn}
+    <CreateCard />
+  {/if}
 </main>
 
 <Footer />

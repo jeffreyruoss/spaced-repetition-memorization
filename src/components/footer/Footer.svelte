@@ -5,8 +5,8 @@
 
 <footer>
   <div class="container">
-    <ByJeff />
     <PwaInstallButton />
+    <ByJeff />
   </div>
 </footer>
 
