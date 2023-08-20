@@ -1,13 +1,13 @@
 <script>
-  import Footer from './components/footer/Footer.svelte';
   import { onMount } from 'svelte';
+  import { SvelteToast } from '@zerodevx/svelte-toast';
+  import './global.css';
   import RegisterForm from './components/RegisterForm.svelte';
   import LoginForm from './components/LoginForm.svelte';
   import UserStatus from './components/UserStatus.svelte';
-  import { SvelteToast } from '@zerodevx/svelte-toast';
-  import './global.css';
-  import CreateCard from './components/CreateCard.svelte';
   import { isLoggedIn } from './stores/authStore.js';
+  import Footer from './components/footer/Footer.svelte';
+  import CreateCard from './components/CreateCard.svelte';
 
   onMount(async () => {
     if ('serviceWorker' in navigator) {
