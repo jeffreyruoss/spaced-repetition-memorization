@@ -1,8 +1,11 @@
 <script>
+  import Footer from './components/footer/Footer.svelte';
   import { onMount } from 'svelte';
   import RegisterForm from './components/RegisterForm.svelte';
   import LoginForm from './components/LoginForm.svelte';
   import UserStatus from './components/UserStatus.svelte';
+  import { SvelteToast } from '@zerodevx/svelte-toast';
+  import './global.css';
 
   onMount(async () => {
     if ('serviceWorker' in navigator) {
@@ -19,16 +22,16 @@
   });
 </script>
 
+<SvelteToast />
+
 <header>
   <div class="container">
     <h1>Spaced Repetition Memorization</h1>
     <UserStatus />
-    <button id="pwa-install-button">Install App</button>
   </div>
 </header>
 
 <main>
-
   <div class="container">
     <div id="auth">
       <RegisterForm />
@@ -37,11 +40,7 @@
   </div>
 </main>
 
-<footer>
-  <div class="container">
-    By Jeff Ruoss
-  </div>
-</footer>
+<Footer />
 
 <style>
 

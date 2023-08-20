@@ -10,7 +10,7 @@
 	}
 </script>
 
-<h1>Register</h1>
+<h2>Register</h2>
 <form on:submit={register}>
 	<input bind:value={email} type="email" placeholder="Email" />
 	<input bind:value={password} type="password" placeholder="Password" />

@@ -1,22 +1,30 @@
 <script>
 	import { onAuthStateChanged, logoutUser } from './../authFunctions.js';
+	import { toast } from '@zerodevx/svelte-toast';
 
 	let userStatus = "No user is signed in";
+	let isLoggedIn = false;
 
 	onAuthStateChanged(user => {
-			if (user) {
-					userStatus = `${user.email} is signed in`;
-			} else {
-					userStatus = `No user is signed in`;
-			}
+		if (user) {
+			userStatus = `${user.email} is signed in`;
+			isLoggedIn = true;
+		} else {
+			userStatus = `No user is signed in`;
+			isLoggedIn = false;
+		}
 	});
 
 	function logout() {
-			logoutUser()
-					.then(() => alert("User signed out successfully."))
-					.catch(error => alert(error.message));
+		logoutUser()
+			.then(() => toast.push('You have been logged out'))
+			.catch(error => alert(error.message));
 	}
 </script>
 
-<p>{userStatus} | <a href="#" on:click|preventDefault={logout}>Logout</a></p>
-
+<p>
+	{userStatus}
+	{#if isLoggedIn}
+		 | <a href="#" on:click|preventDefault={logout}>Logout</a>
+	{/if}
+</p>

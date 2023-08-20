@@ -1,0 +1,21 @@
+h1 {
+	margin-bottom: 30px;
+}
+h2 {
+	margin-bottom: 20px;
+}
+
+/**
+ * Svelte Toast 
+ * Need to do some Pico CSS overrides
+ */
+ ._toastItem progress {
+	border-radius: 0;
+	margin-bottom: 0;
+ }
+ ._toastBtn {
+	padding: 0;
+	border: none;
+	margin: 0;
+	background-color: transparent
+ }
