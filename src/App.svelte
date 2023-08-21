@@ -8,6 +8,9 @@
   import { isLoggedIn } from './stores/authStore.js';
   import Footer from './components/footer/Footer.svelte';
   import CreateCard from './components/CreateCard.svelte';
+  import '@fontsource/titillium-web/300.css';
+  import '@fontsource/titillium-web/400.css';
+  import '@fontsource/titillium-web/700.css';
 
   onMount(async () => {
     if ('serviceWorker' in navigator) {
