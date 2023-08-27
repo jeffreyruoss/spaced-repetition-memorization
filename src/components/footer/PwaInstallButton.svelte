@@ -9,8 +9,6 @@
 
 <style>
 	button {
-		margin-left: auto;
-		margin-right: auto;
 		display: flex;
 		align-items: center;
 		justify-content: center;

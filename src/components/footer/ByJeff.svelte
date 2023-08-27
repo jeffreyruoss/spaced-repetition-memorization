@@ -5,6 +5,7 @@
 
 <style>
 	p {
+		margin-bottom: 0;
 		text-align: center;
 	}
 </style>
