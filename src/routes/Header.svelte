@@ -15,7 +15,7 @@
 			<NavHamburger on:click={toggle} />
 			<NavUl {hidden}>
 				<NavLi href="/" on:click={toggle}>Home</NavLi>
-				<NavLi href="/cards" on:click={toggle}>Create Flash Card</NavLi>
+				<NavLi href="/create" on:click={toggle}>Create Flash Card</NavLi>
 				<NavLi href="/cards" on:click={toggle}>Your Flash Cards</NavLi>
 				<NavLi href="/login" on:click={toggle}>Log In</NavLi>
 				<NavLi href="/register" on:click={toggle}>Sign Up</NavLi>
