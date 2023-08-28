@@ -1,0 +1,52 @@
+body {
+	font-family: 'Titillium Web', sans-serif;
+	background: linear-gradient(135deg, #182237, #111827);
+	color: rgb(156, 163, 175); /* tailwind gray-400 */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav span {
+	font-family: 'Titillium Web', sans-serif;
+}
+
+/*
+ * Main padding for left and right edges
+ */
+header > div,
+main > div,
+footer > div {
+	padding: 1em;
+}
+
+/**
+ * Labels - override flowbite <Label> component
+ */
+label {
+	font-size: 16px !important;
+}
+
+/**
+ * Inputs - override flowbite <Input> component
+ */
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
+select {
+	padding-top: 0.8rem !important;
+	padding-bottom: 0.8rem !important;
+}
