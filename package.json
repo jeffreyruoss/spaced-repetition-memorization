@@ -17,6 +17,7 @@
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-vercel": "^3.0.3",
 		"@sveltejs/kit": "^1.20.4",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
@@ -41,6 +42,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/titillium-web": "^5.0.8"
+		"@fontsource/titillium-web": "^5.0.8",
+		"encoding": "^0.1.13",
+		"firebase": "^10.3.0"
 	}
 }
