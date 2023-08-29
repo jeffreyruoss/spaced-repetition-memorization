@@ -8,10 +8,8 @@
 	onAuthStateChanged((user) => {
 		if (user) {
 			userStatus = `Signed in as ${user.email}`;
-			isLoggedIn.set(true);
 		} else {
 			userStatus = `No user is signed in`;
-			isLoggedIn.set(false);
 		}
 	});
 

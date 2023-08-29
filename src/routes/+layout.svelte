@@ -5,7 +5,19 @@
 	import '@fontsource/titillium-web/700.css';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
-	
+	import { isLoggedIn } from '$lib/authStore.js';
+	import { onAuthStateChanged } from '$lib/authFunctions.js';
+
+	/**
+	 * Set the isLoggedIn store to true or false
+	 */
+	onAuthStateChanged((user) => {
+		if (user) {
+			isLoggedIn.set(true);
+		} else {
+			isLoggedIn.set(false);
+		}
+	});
 </script>
 
 <div class="wrap">

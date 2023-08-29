@@ -10,7 +10,6 @@
 	let password = '';
 
 	function handleSubmit(event) {
-		// event.preventDefault();
 		loginUser(email, password)
 			.then((userCredential) => {
 				toast.push(`You are logged in as ${email}`);
